@@ -39,14 +39,14 @@ class MiningEngine:
            \'\'\'
            Arguments:
 
-           * element: (CENTAURminer.Element) Location of the given element in the page.
+           * element: (centaurminer.Element) Location of the given element in the page.
            \'\'\'
            # Add instructions here, using self.wd and self.get
            # Below is equivalent to what happens without this override function
            return self.get(element)
 
     Attributes :
-        site : :class:`PageLocations <CENTAURminer.PageLocations>`
+        site : :class:`PageLocations <centaurminer.PageLocations>`
             Stores the location of the elements you want to extract information from.
         wd : :class:`selenium.webdriver`
             The webdriver used to connect to and collect DOM elements from the URL you specify.
@@ -101,7 +101,7 @@ class MiningEngine:
         Simply gets the list of authors and joins them together, using :func:`TagList`
 
         Attributes:
-            element : :class:`CENTAURminer.Element`
+            element : :class:`centaurminer.Element`
                 The location of the element to mine data from - in this case, it's several elements located with the same identifier.
         '''
         objs = self.get(element, several=True)
@@ -115,7 +115,7 @@ class MiningEngine:
         When creating custom :code:`get_*****` functions, use this function to grab the data from the element, before doing additional processing on it.
 
         Attributes:
-            element: :class:`CENTAURminer.Element`
+            element: :class:`centaurminer.Element`
                 The location of the element to mine data from.
             several: Boolean
                 Use to indicate that we should get all elements of this type, instead of the first one on the page.

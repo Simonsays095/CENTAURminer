@@ -1,17 +1,17 @@
 import setuptools
 
-with open("README.md", "r") as fh:
+with open("README.rst", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="BREATHE-mining",
+    name="centaurminer",
     version="0.0.1",
     author="Simon Ewing",
     author_email="Simonsays095@gmail.com",
-    description="A selenium wrapper to help mining data for the BREATHE dataset.",
+    description="A selenium wrapper to help mining data from scientific literature.",
     long_description=long_description,
-    long_description_content_type="text/markdown",
-    url="https://github.com/pypa/sampleproject",
+    long_description_content_type="text/x-rst",
+    url="https://github.com/Simonsays095/CENTAURminer.git",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
@@ -21,4 +21,8 @@ setuptools.setup(
         "Intended Audience :: Science/Research",
     ],
     python_requires='>=3.4',
+    install_requires=[
+        'selenium',
+        'webdriver_manager'
+    ],
 )

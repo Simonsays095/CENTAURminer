@@ -11,7 +11,7 @@ class Element:
         method : str
             The name of the method used to locate the element. Common values include "id", "xpath", and "css_selector" - look at `<https://selenium-python.readthedocs.io/locating-elements.html>`_ for more info. This is passed directly into the selenium.webdriver.common.By constructor.
         needsInstructions : Boolean
-            If true, this element requires instructions in the :class:`CENTAURminer.MiningEngine` class to extract - used for the Complex subclass.
+            If true, this element requires instructions in the :class:`centaurminer.MiningEngine` class to extract - used for the Complex subclass.
     '''
     def __init__(self, method, selector):
         self.needsInstructions = False
@@ -43,7 +43,7 @@ class Complex(Element):
     '''
     This represents an element that needs further directions to extract.
 
-    An error will be thrown when trying to gather data, if the :class:`CENTAURminer.MiningEngine` doing the mining does not have an instruction for a Complex element.
+    An error will be thrown when trying to gather data, if the :class:`centaurminer.MiningEngine` doing the mining does not have an instruction for a Complex element.
     '''
     def __init__(self):
         self.needsInstructions = True
@@ -61,9 +61,9 @@ class PageLocations:
         * abstract : MetaData("citation_abstract")
         * date_publication : MetaData("citation_date")
 
-    These *can* be overwritten if required. Also, see :class:`CENTAURminer.MiningEngine` to see how authors specifically are handled.
+    These *can* be overwritten if required. Also, see :class:`centaurminer.MiningEngine` to see how authors specifically are handled.
 
-    To include an :class:`Element <CENTAURminer.Element>` for another piece of information, just subclass this class and add a static variable that stores an :class:`Element <CENTAURminer.Element>`.
+    To include an :class:`Element <centaurminer.Element>` for another piece of information, just subclass this class and add a static variable that stores an :class:`Element <centaurminer.Element>`.
     '''
     # High priority
     title = MetaData("citation_title")
