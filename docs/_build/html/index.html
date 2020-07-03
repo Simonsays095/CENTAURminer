@@ -1,0 +1,265 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>CENTAUR Scientific Article Data Mining Framework &mdash; CENTAUR miner  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Intro to Data Mining" href="intro_to_data_mining.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="#" class="icon icon-home" alt="Documentation Home"> CENTAUR miner
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="intro_to_data_mining.html">Intro to Data Mining</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro_to_data_mining.html#ethical-data-mining">Ethical Data Mining</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro_to_data_mining.html#document-object-models">Document Object Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro_to_data_mining.html#web-elements">Web Elements</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="module_documentation/DOM_elements.html">DOM Elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_documentation/PageLocations.html">Page Locations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_documentation/MiningEngine.html">Mining Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_documentation/Helper_functions.html">Helper Functions</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/Minimal.html">Minimal Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Fully_worked.html">Fully Worked Example</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">CENTAUR miner</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>CENTAUR Scientific Article Data Mining Framework</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="centaur-scientific-article-data-mining-framework">
+<h1>CENTAUR Scientific Article Data Mining Framework<a class="headerlink" href="#centaur-scientific-article-data-mining-framework" title="Permalink to this headline">¶</a></h1>
+<p>This package is a wrapper on <a class="reference external" href="https://pypi.org/project/selenium/">selenium</a>, a package that “automates web browser interaction from Python”. In this package, we add the following features:</p>
+<ul class="simple">
+<li><p>Add a class used to identify where elements are located on the DOM</p></li>
+<li><p>Add a class that specifies if any extra processing should be done to the elements in the previous class, rather than just extract an attribute.</p></li>
+<li><p>Create helper classes to simplify the process of identifying elements</p></li>
+<li><p>Helper functions are included to make processing and storing data easier.</p></li>
+</ul>
+<p>Although this package is tailored to data mining scientific literature, is can be used in other applications in data mining.</p>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>You need python &gt;3.4 as a pre-requisite, and then simply install via pip:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pip install centaurminer</span>
+</pre></div>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="intro_to_data_mining.html">Intro to Data Mining</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro_to_data_mining.html#ethical-data-mining">Ethical Data Mining</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro_to_data_mining.html#document-object-models">Document Object Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro_to_data_mining.html#web-elements">Web Elements</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="module_documentation/DOM_elements.html">DOM Elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_documentation/PageLocations.html">Page Locations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_documentation/MiningEngine.html">Mining Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_documentation/Helper_functions.html">Helper Functions</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/Minimal.html">Minimal Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/Fully_worked.html">Fully Worked Example</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="intro_to_data_mining.html" class="btn btn-neutral float-right" title="Intro to Data Mining" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Simon Ewing
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,2 +1,3 @@
-docs/
 centaurminer/__pycache__
+centaurminer.egg-info/
+dist/

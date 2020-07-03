@@ -1,0 +1,372 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Fully Worked Example &mdash; CENTAUR miner  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Minimal Example" href="Minimal.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> CENTAUR miner
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro_to_data_mining.html">Intro to Data Mining</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro_to_data_mining.html#ethical-data-mining">Ethical Data Mining</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro_to_data_mining.html#document-object-models">Document Object Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro_to_data_mining.html#web-elements">Web Elements</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../module_documentation/DOM_elements.html">DOM Elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_documentation/PageLocations.html">Page Locations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_documentation/MiningEngine.html">Mining Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../module_documentation/Helper_functions.html">Helper Functions</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Examples</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Minimal.html">Minimal Example</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Fully Worked Example</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CENTAUR miner</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Fully Worked Example</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/examples/Fully_worked.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="fully-worked-example">
+<h1>Fully Worked Example<a class="headerlink" href="#fully-worked-example" title="Permalink to this headline">¶</a></h1>
+<p>If you haven’t done so already, please look at the <a class="reference internal" href="Minimal.html"><span class="doc">Minimal Example</span></a>, because we’re going to start from where that left off, just on a different site.</p>
+<p>For this tutorial, let’s look at <a class="reference external" href="JBS">The Journal of Biomedical Science</a>. Start Looking at several documents on the site. It looks like all of the articles have similar formatting, so we don’t have to worry too much about giving specialized instructions to different types of articles. Let’s start looking in-depth at an article that has as much information as possible:</p>
+<p><a class="reference external" href="https://jbiomedsci.biomedcentral.com/articles/10.1186/s12929-020-00652-z">https://jbiomedsci.biomedcentral.com/articles/10.1186/s12929-020-00652-z</a></p>
+<p>And using the scaffolding from the minimal example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">centaurminer</span> <span class="k">as</span> <span class="nn">mining</span>
+<span class="k">class</span> <span class="nc">JBSLocations</span><span class="p">(</span><span class="n">mining</span><span class="o">.</span><span class="n">PageLocations</span><span class="p">):</span>
+    <span class="n">source</span> <span class="o">=</span> <span class="s2">&quot;The Journal of Biomedical Science&quot;</span>
+    <span class="n">license</span> <span class="o">=</span> <span class="s2">&quot;https://www.biomedcentral.com/about/open-access&quot;</span>
+
+<span class="k">class</span> <span class="nc">JBSEngine</span><span class="p">(</span><span class="n">mining</span><span class="o">.</span><span class="n">MiningEngine</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="n">miner</span> <span class="o">=</span> <span class="n">JBSEngine</span><span class="p">(</span><span class="n">JBSLocations</span><span class="p">)</span>
+<span class="n">miner</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="s2">&quot;https://jbiomedsci.biomedcentral.com/articles/10.1186/s12929-020-00652-z&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">miner</span><span class="o">.</span><span class="n">results</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>I’ve added both <code class="code docutils literal notranslate"><span class="pre">JBSLocations.source</span></code> and <code class="code docutils literal notranslate"><span class="pre">JBSLocations.license</span></code> attributes, which get stored directly in our results, since they’re strings. I strongly recommend you find the licensing first, since this will help you know for sure that you can access and share the data according to the site’s policy. Here is what we get so far:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[WDM] - Current google-chrome version is 83.0.4103</span>
+<span class="go">[WDM] - Get LATEST driver version for 83.0.4103</span>
+<span class="go">[WDM] - Driver [C:\Users\simon\.wdm\drivers\chromedriver\win32\83.0.4103.39\chromedriver.exe] found in cache</span>
+
+<span class="go">DevTools listening on ws://127.0.0.1:64843/devtools/browser/3c82a3a7-b330-4a7c-96ee-cb70709a8013</span>
+<span class="go">Unable to find element defined by JBSLocations.date_publication</span>
+<span class="go">{</span>
+<span class="go">    &#39;abstract&#39;: &#39;Monoclonal antibodies (mAbs) ... satisfy the unmet medical needs of mAb therapy.&#39;,</span>
+<span class="go">    &#39;authors&#39;: &#39;&lt;item&gt;Wen-Wei Lin&lt;/item&gt;&lt;item&gt;Yun-Chi Lu&lt;/item&gt;&lt;item&gt;Chih-Hung Chuang&lt;/item&gt;&lt;item&gt;Tian-Lu Cheng&lt;/item&gt;&#39;,</span>
+<span class="go">    &#39;doi&#39;: &#39;10.1186/s12929-020-00652-z&#39;,</span>
+<span class="go">    &#39;license&#39;: &#39;https://www.biomedcentral.com/about/open-access&#39;,</span>
+<span class="go">    &#39;source&#39;: &#39;The Journal of Biomedical Science&#39;,</span>
+<span class="go">    &#39;title&#39;: &#39;Ab locks for improving the selectivity and safety of antibody drugs&#39;,</span>
+<span class="go">    &#39;url&#39;: &#39;https://jbiomedsci.biomedcentral.com/articles/10.1186/s12929-020-00652-z&#39;,</span>
+<span class="go">    &#39;date_aquisition&#39;: &#39;2020-07-02&#39;</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+<p>Compare this to what’s shown on the page - so far, it’s all looking good. It’s missing the publication date, but that’s alright, we can get it now. At the same time, let’s look through the metadata for more data. It looks like we have publication date, a pdf link, and references in the metadata. Publication date and the pdf link are simple, but there are many references - we need to tell the program how to gather all of these and combine them into results. Let’s do all of this at once:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">centaurminer</span> <span class="k">as</span> <span class="nn">mining</span>
+<span class="k">class</span> <span class="nc">JBSLocations</span><span class="p">(</span><span class="n">mining</span><span class="o">.</span><span class="n">PageLocations</span><span class="p">):</span>
+    <span class="n">source</span> <span class="o">=</span> <span class="s2">&quot;The Journal of Biomedical Science&quot;</span>
+    <span class="n">license</span> <span class="o">=</span> <span class="s2">&quot;https://www.biomedcentral.com/about/open-access&quot;</span>
+    <span class="n">date_publication</span> <span class="o">=</span> <span class="n">mining</span><span class="o">.</span><span class="n">MetaData</span><span class="p">(</span><span class="s2">&quot;citation_online_date&quot;</span><span class="p">)</span>
+    <span class="n">link_pdf</span> <span class="o">=</span> <span class="n">mining</span><span class="o">.</span><span class="n">MetaData</span><span class="p">(</span><span class="s2">&quot;citation_pdf_url&quot;</span><span class="p">)</span>
+    <span class="n">references</span> <span class="o">=</span> <span class="n">mining</span><span class="o">.</span><span class="n">MetaData</span><span class="p">(</span><span class="s2">&quot;citation_reference&quot;</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">JBSEngine</span><span class="p">(</span><span class="n">mining</span><span class="o">.</span><span class="n">MiningEngine</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get_references</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">mining</span><span class="o">.</span><span class="n">TagList</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">several</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+
+
+<span class="n">miner</span> <span class="o">=</span> <span class="n">JBSEngine</span><span class="p">(</span><span class="n">JBSLocations</span><span class="p">)</span>
+<span class="n">miner</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="s2">&quot;https://jbiomedsci.biomedcentral.com/articles/10.1186/s12929-020-00652-z&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">miner</span><span class="o">.</span><span class="n">results</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <code class="code docutils literal notranslate"><span class="pre">several</span></code> attribute here tells the engine we want all elements that match the description, and <code class="code docutils literal notranslate"><span class="pre">TagList</span></code> combines them into a string. Now running this again, we have three added keys to our results dictionary:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">{</span>
+<span class="go">    ...,</span>
+<span class="go">    &#39;date_publication&#39;: &#39;2020/06/25&#39;,</span>
+<span class="go">    &#39;link_pdf&#39;: &#39;https://jbiomedsci.biomedcentral.com/track/pdf/10.1186/s12929-020-00652-z&#39;</span>
+<span class="go">    &#39;references&#39;: &#39;&lt;item&gt;citation_journal_title=Cancer Lett; ... over 100 references here ... citation_id=CR198&lt;/item&gt;&#39;</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+<p>Alright, let’s move on to the main body of the page! Of the information presented here, let’s focus on the keywords, affiliated organization, and full body text.</p>
+<div class="section" id="keywords">
+<h2>Keywords:<a class="headerlink" href="#keywords" title="Permalink to this headline">¶</a></h2>
+<p>All the way at the bottom of the page, you can see a group of keywords that may be useful. These are all located in divs with <code class="code docutils literal notranslate"><span class="pre">class=&quot;c-article-subject-list__subject&quot;</span></code> - there’s no other text in these elements, which makes it really easy to collect - we just have to collect each element, and treat it identically to how we collected the references!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">JBSLocations</span><span class="p">(</span><span class="n">mining</span><span class="o">.</span><span class="n">PageLocations</span><span class="p">):</span>
+    <span class="n">source</span> <span class="o">=</span> <span class="s2">&quot;The Journal of Biomedical Science&quot;</span>
+    <span class="n">license</span> <span class="o">=</span> <span class="s2">&quot;https://www.biomedcentral.com/about/open-access&quot;</span>
+    <span class="n">date_publication</span> <span class="o">=</span> <span class="n">mining</span><span class="o">.</span><span class="n">MetaData</span><span class="p">(</span><span class="s2">&quot;citation_online_date&quot;</span><span class="p">)</span>
+    <span class="n">link_pdf</span> <span class="o">=</span> <span class="n">mining</span><span class="o">.</span><span class="n">MetaData</span><span class="p">(</span><span class="s2">&quot;citation_pdf_url&quot;</span><span class="p">)</span>
+    <span class="n">references</span> <span class="o">=</span> <span class="n">mining</span><span class="o">.</span><span class="n">MetaData</span><span class="p">(</span><span class="s2">&quot;citation_reference&quot;</span><span class="p">)</span>
+    <span class="n">keywords</span> <span class="o">=</span> <span class="n">mining</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s2">&quot;css_selector&quot;</span><span class="p">,</span> <span class="s2">&quot;.c-article-subject-list__subject&quot;</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">JBSEngine</span><span class="p">(</span><span class="n">mining</span><span class="o">.</span><span class="n">MiningEngine</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get_references</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">mining</span><span class="o">.</span><span class="n">TagList</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">several</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">get_keywords</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">mining</span><span class="o">.</span><span class="n">TagList</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">several</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>This adds the following key-value pair to our results:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&#39;keywords&#39;: &#39;&lt;item&gt;Monoclonal antibody (mAb)&lt;/item&gt;&lt;item&gt;adverse events&lt;/item&gt;&lt;item&gt;Ab lock&lt;/item&gt;&lt;item&gt;spatial-hindrance-based approaches&lt;/item&gt;&lt;item&gt;affinity-based approaches&lt;/item&gt;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="full-body">
+<h2>Full-body:<a class="headerlink" href="#full-body" title="Permalink to this headline">¶</a></h2>
+<p>We have a few struggles here, and a few choices to make. What should we do with figures? How should we treat headers and titles? For now, we’re going to ignore figures and tables, and treat headers/titles as their own paragraph. The main struggle with this approach is that we need to throw out lots of information we don’t want - figures and captions, the abstract section, and all of the subsections after the conclusions (like Abbreviations). We can do most of this directly with a css selector, but specific selector means more brittle, easily breakable code - just keep that in mind. Here is the selector I came up with, but others are possible:</p>
+<p><code class="code docutils literal notranslate"><span class="pre">section</span> <span class="pre">&gt;</span> <span class="pre">[id^=Sec][id$=section]</span> <span class="pre">&gt;</span> <span class="pre">.c-article-section__content</span> <span class="pre">&gt;</span> <span class="pre">p,</span> <span class="pre">[id^=Sec]:not([id$=content]):not([id$=section])</span></code></p>
+<p>This accepts two types of elements (separated by a comma, meaning “or”) - the first is the main text in the body, and the second is all of the section headers. The body text needs 4 levels of content to find it accurately, and both ids and classes are used in the selector. The section headers have a very specific signature, so they’re just located by their attributes. The “^=” and “$=” are “starts_with” and “ends_with” css selectors, which we use for both types. Here’s what it looks like in the code (along with the extra processing in the <code class="xref py py-class docutils literal notranslate"><span class="pre">BMCEngine</span></code> class)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">JBSLocations</span><span class="p">(</span><span class="n">mining</span><span class="o">.</span><span class="n">PageLocations</span><span class="p">):</span>
+    <span class="n">source</span> <span class="o">=</span> <span class="s2">&quot;The Journal of Biomedical Science&quot;</span>
+    <span class="n">license</span> <span class="o">=</span> <span class="s2">&quot;https://www.biomedcentral.com/about/open-access&quot;</span>
+    <span class="n">date_publication</span> <span class="o">=</span> <span class="n">mining</span><span class="o">.</span><span class="n">MetaData</span><span class="p">(</span><span class="s2">&quot;citation_online_date&quot;</span><span class="p">)</span>
+    <span class="n">link_pdf</span> <span class="o">=</span> <span class="n">mining</span><span class="o">.</span><span class="n">MetaData</span><span class="p">(</span><span class="s2">&quot;citation_pdf_url&quot;</span><span class="p">)</span>
+    <span class="n">references</span> <span class="o">=</span> <span class="n">mining</span><span class="o">.</span><span class="n">MetaData</span><span class="p">(</span><span class="s2">&quot;citation_reference&quot;</span><span class="p">)</span>
+    <span class="n">keywords</span> <span class="o">=</span> <span class="n">mining</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s2">&quot;css_selector&quot;</span><span class="p">,</span> <span class="s2">&quot;.c-article-subject-list__subject&quot;</span><span class="p">)</span>
+    <span class="n">body</span> <span class="o">=</span> <span class="n">mining</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s2">&quot;css_selector&quot;</span><span class="p">,</span> <span class="s2">&quot;section &gt; [id^=Sec][id$=section] &gt; .c-article-section__content &gt; p, [id^=Sec]:not([id$=content]):not([id$=section])&quot;</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">JBSEngine</span><span class="p">(</span><span class="n">mining</span><span class="o">.</span><span class="n">MiningEngine</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get_references</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">mining</span><span class="o">.</span><span class="n">TagList</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">several</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">get_keywords</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">mining</span><span class="o">.</span><span class="n">TagList</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">several</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">get_body</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">):</span>
+        <span class="n">paragraphs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">several</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">paragraphs</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>I would show you here what gets added to results, but it’s just the full body text, which is too long to be helpful.</p>
+</div>
+<div class="section" id="affiliated-organization">
+<h2>Affiliated organization:<a class="headerlink" href="#affiliated-organization" title="Permalink to this headline">¶</a></h2>
+<p>Toward the bottom of the page, you can see the list of author affiliations - it’s a list of authors and organizations, alternating back and forth. Because of this, and because we want to combine both of these types of elements into one result, we need to use a <a class="reference internal" href="../module_documentation/DOM_elements.html#centaurminer.Complex" title="centaurminer.Complex"><code class="xref py py-class docutils literal notranslate"><span class="pre">centaurminer.Complex</span></code></a> class instead of an element. When we combine the authors + orgs, let’s organize it like this: <code class="code docutils literal notranslate"><span class="pre">&lt;item&gt;&lt;author&gt;</span> <span class="pre">...</span> <span class="pre">&lt;/author&gt;&lt;org&gt;</span> <span class="pre">...</span> <span class="pre">&lt;/org&gt;&lt;/item&gt;</span> <span class="pre">...</span></code>. Here’s my solution:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># In JBSLocations</span>
+<span class="n">organization_affiliated</span> <span class="o">=</span> <span class="n">mining</span><span class="o">.</span><span class="n">Complex</span><span class="p">()</span>
+
+<span class="c1"># In JBSEngine</span>
+<span class="k">def</span> <span class="nf">get_organization_affiliated</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">):</span>
+    <span class="n">orgs_loc</span> <span class="o">=</span> <span class="n">mining</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s2">&quot;css_selector&quot;</span><span class="p">,</span> <span class="s2">&quot;.c-article-author-affiliation__address&quot;</span><span class="p">)</span>
+    <span class="n">authors_loc</span> <span class="o">=</span> <span class="n">mining</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s2">&quot;css_selector&quot;</span><span class="p">,</span> <span class="s2">&quot;.c-article-author-affiliation__authors-list&quot;</span><span class="p">)</span>
+
+    <span class="n">orgs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">orgs_loc</span><span class="p">,</span> <span class="n">several</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">authors</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">authors_loc</span><span class="p">,</span> <span class="n">several</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">org</span><span class="p">,</span> <span class="n">author_list</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">orgs</span><span class="p">,</span> <span class="n">authors</span><span class="p">):</span>
+        <span class="n">res_string</span> <span class="o">=</span> <span class="s2">&quot;&lt;authors&gt;&quot;</span> <span class="o">+</span> <span class="n">author_list</span> <span class="o">+</span> <span class="s2">&quot;&lt;/authors&gt;&quot;</span>
+        <span class="n">res_string</span> <span class="o">+=</span> <span class="s2">&quot;&lt;org&gt;&quot;</span> <span class="o">+</span> <span class="n">org</span> <span class="o">+</span> <span class="s2">&quot;&lt;/org&gt;&quot;</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">res_string</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">mining</span><span class="o">.</span><span class="n">TagList</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>I extract the affiliations and authors separately, zip them together (to get them to alternate), and tag the inner elements manually.</p>
+<p>That’s it for this page! You can extract whatever elements you want, but we’ve already got 238 kb of data, as of writing this example. Now it’s up to your goals and time you can spend, to extract information from whatever site you want!</p>
+<p>Remember, if you’re stuck on some piece of information, you can always manipulate the selenium webdriver itself at <a class="reference internal" href="../module_documentation/MiningEngine.html#centaurminer.MiningEngine" title="centaurminer.MiningEngine"><code class="xref py py-class docutils literal notranslate"><span class="pre">MiningEngine.wd</span></code></a>.</p>
+<p>Happy mining!</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="Minimal.html" class="btn btn-neutral float-left" title="Minimal Example" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Simon Ewing
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

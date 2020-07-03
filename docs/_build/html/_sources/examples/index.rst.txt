@@ -1,0 +1,6 @@
+Examples
+--------
+
+We have two examples currently - one is a simple, minimal example just to get
+your hands on the module and start to use it. The second is a more in-depth,
+fully-worked example that includes most of the advanced features in the module.

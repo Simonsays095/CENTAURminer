@@ -1,0 +1,10 @@
+DOM Elements
+============
+
+There are two main class for locating an element on the DOM of your site, described below.
+
+.. autoclass:: pieminer.Element
+   :members:
+
+.. autoclass:: pieminer.MetaData
+   :members:

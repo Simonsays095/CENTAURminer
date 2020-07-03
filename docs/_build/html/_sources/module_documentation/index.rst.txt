@@ -1,0 +1,17 @@
+Module Documentation
+====================
+
+Here we have in-depth documentation of everything in the module. Please
+click one of the links below to access the documentation you're interested in.
+
+Classes
+-------
+
+* :doc:`DOM_elements`
+* :doc:`PageLocations`
+* :doc:`MiningEngine`
+
+Helper Functions
+----------------
+
+* :doc:`Helper_functions`
