@@ -43,7 +43,7 @@ Let's start with the complete example, and then we'll break it down:
 
 As of writing this documentation, here is the output from the script above:
 
-.. code-block::
+.. code-block:: console
 
    [WDM] - Current google-chrome version is 83.0.4103     
    [WDM] - Get LATEST driver version for 83.0.4103         
