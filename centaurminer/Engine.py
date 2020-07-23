@@ -3,8 +3,8 @@ import sys
 from datetime import date
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
-from selenium.common.exceptions import NoSuchElementException
-from DOM_elements import PageLocations
+from .selenium.common.exceptions import NoSuchElementException
+from .DOM_elements import PageLocations
 
 
 class MiningEngine:
@@ -102,7 +102,7 @@ class MiningEngine:
         element : :class:`centaurminer.Element`
             The location of the element to mine data from - in this case, it's several elements located with the same identifier.
         '''
-        from utils import TagList
+        from .utils import TagList
         objs = self.get(element, several=True)
         return TagList(objs)
 

@@ -5,7 +5,7 @@ with open("README.rst", "r") as fh:
 
 setuptools.setup(
     name = "centaurminer",
-    version = "0.0.1",
+    version = "0.0.2",
     author = "Simon Ewing",
     author_email = "Simonsays095@gmail.com",
     description = "A selenium wrapper to help mining data from scientific literature.",

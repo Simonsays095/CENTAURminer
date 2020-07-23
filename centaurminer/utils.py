@@ -1,7 +1,3 @@
-from DOM_elements import PageLocations
-from Engine import MiningEngine
-
-
 def TagList(str_list, tag="item"):
     '''
     Tags a list and converts to a string - avoids data corruption by using a more complex tag.
@@ -32,6 +28,9 @@ def CollectURLs(start_url, link_elem, next_elem=None):
     next_elem : :class:`centaruminer.Element`, optional
         Indicates where on the page the "next page" button is, to navigate through search pages.
     '''
+    from .DOM_elements import PageLocations
+    from .Engine import MiningEngine
+
     urls = []
     pageNum = 1
     # Get access to a webdriver and load the page
