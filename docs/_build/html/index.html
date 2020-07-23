@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>CENTAUR Scientific Article Data Mining Framework &mdash; CENTAUR miner  documentation</title>
+  <title>Scientific Article (CENTAUR) Data Mining Package &mdash; CENTAUR miner  documentation</title>
   
 
   
@@ -145,7 +145,7 @@
     
       <li><a href="#" class="icon icon-home"></a> &raquo;</li>
         
-      <li>CENTAUR Scientific Article Data Mining Framework</li>
+      <li>Scientific Article (CENTAUR) Data Mining Package</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -164,10 +164,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="centaur-scientific-article-data-mining-framework">
-<h1>CENTAUR Scientific Article Data Mining Framework<a class="headerlink" href="#centaur-scientific-article-data-mining-framework" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="scientific-article-centaur-data-mining-package">
+<h1>Scientific Article (CENTAUR) Data Mining Package<a class="headerlink" href="#scientific-article-centaur-data-mining-package" title="Permalink to this headline">¶</a></h1>
 <p>This package is a wrapper on <a class="reference external" href="https://pypi.org/project/selenium/">selenium</a>, a package that “automates web browser interaction from Python”. In this package, we add the following features:</p>
 <ul class="simple">
+<li><p>Automatically determine and install the correct chromedriver version, using webdriver-manager.</p></li>
 <li><p>Add a class used to identify where elements are located on the DOM</p></li>
 <li><p>Add a class that specifies if any extra processing should be done to the elements in the previous class, rather than just extract an attribute.</p></li>
 <li><p>Create helper classes to simplify the process of identifying elements</p></li>
@@ -176,10 +177,28 @@
 <p>Although this package is tailored to data mining scientific literature, is can be used in other applications in data mining.</p>
 <div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
-<p>You need python &gt;3.4 as a pre-requisite, and then simply install via pip:</p>
+<div class="section" id="pre-requisites">
+<h3>Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><p>Python version &gt;= 3.4</p></li>
+<li><p>Google chrome</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="install">
+<h3>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h3>
+<p>Install directly via pip:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pip install centaurminer</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="dependencies">
+<h3>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Selenium &gt;= 3.141.0</p></li>
+<li><p>webdriver-manager &gt;= 3.2.1</p></li>
+</ul>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Introduction</span></p>
 <ul>
@@ -205,6 +224,17 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/Fully_worked.html">Fully Worked Example</a></li>
 </ul>
 </div>
+</div>
+</div>
+<div class="section" id="more-information">
+<h2>More Information<a class="headerlink" href="#more-information" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>You can get more information from the source code and the PyPi page:</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="https://github.com/Simonsays095/CENTAURminer">Source code</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/centaurminer/">PyPi page</a></p></li>
+</ul>
+</dd>
+</dl>
 </div>
 </div>
 

@@ -1,7 +1,0 @@
-Page Locations
-==============
-
-This class is essentially a way to store multiple :class:`pieminer.Element` objects.
-
-.. autoclass:: pieminer.PageLocations
-   :members:

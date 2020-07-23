@@ -4,23 +4,7 @@ from datetime import date
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.common.exceptions import NoSuchElementException
-from .DOM_elements import PageLocations
-
-
-def TagList(str_list, tag="item"):
-    '''
-    Tags a list and converts to a string - avoids data corruption by using a more complex tag.
-
-    Attributes:
-        str_list : list
-            List of strings to be joined with tags.
-        tag : str
-            Tag to use for the list. This tag will be wrapped in `<...>` and `</...>` to close.
-    '''
-    result = ""
-    for string in str_list:
-        result += "<item>" + string + "</item>"
-    return result
+from DOM_elements import PageLocations
 
 
 class MiningEngine:
@@ -35,32 +19,48 @@ class MiningEngine:
 
     .. code-block:: python
 
-       def get_xyz(self, element):
-           \'\'\'
-           Arguments:
+        def get_xyz(self, element):
+            \'\'\'
+            Short description
 
-           * element: (centaurminer.Element) Location of the given element in the page.
+            Arguments
+            ---------
+            element: :class:`centaurminer.Element`
+                Location of the given element in the page.
            \'\'\'
            # Add instructions here, using self.wd and self.get
            # Below is equivalent to what happens without this override function
            return self.get(element)
 
-    Attributes :
-        site : :class:`PageLocations <centaurminer.PageLocations>`
-            Stores the location of the elements you want to extract information from.
-        wd : :class:`selenium.webdriver`
-            The webdriver used to connect to and collect DOM elements from the URL you specify.
-        results : dict
-            Storage dictionary for the results from data gathering.
+    Arguments
+    ---------
+    site_locations : :class:`centaurMiner.PageLocations`
+        A class reference to a subclass of :class:`centaurMiner.PageLocations`.
+    driver_path : str, optional
+        The location of your webdriver. If this is not specified, one will be installed/cached automatically.
+    headless : bool, optional
+        If False, the webdriver will open a GUI as it performs its tasks. Defaults to True (no GUI).
+
+    Attributes
+    ----------
+    site : :class:`PageLocations <centaurminer.PageLocations>`
+        Stores the location of the elements you want to extract information from.
+    wd : :class:`selenium.webdriver`
+        The webdriver used to connect to and collect DOM elements from the URL you specify.
+    results : dict
+        Storage dictionary for the results from data gathering.
+
     '''
 
-    def __init__(self, site_locations: PageLocations):
+    def __init__(self, site_locations: PageLocations, driver_path=None, headless=True):
         '''
         Arguments:
           site: Should be a class reference, not a class object. PageLocations are static classes, so you never need to instantiate them.
+          driver_path: Path to the driver location on your machine.
+          headless: If False, the webdriver will open a GUI while running.
         '''
         self.site = site_locations
-        self.wd = self._init_selenium()
+        self.wd = self._init_selenium(driver_path, headless)
         self.results = {}
 
     def gather(self, url):
@@ -71,26 +71,23 @@ class MiningEngine:
 
         * url: (string) URL for the site you want to mine data from.
         '''
+        self.results = {}  # Reset for subsequent gathers
         self.wd.get(url)
         for info in self.site._elements():
             get_func = getattr(self, "get_" + info, None)
             element = getattr(self.site, info)
-            
+
             # Check for strings - just store them directly
             if isinstance(element, str):
                 self.results[info] = element
                 continue
-            
+
             if get_func is None and element.needsInstructions:
                 print(self.site.__name__ + "." + info, "needs further instructions to process - add it to the engine.")
                 continue
             elif get_func is None:
                 get_func = self.get
-            result = get_func(element)
-            if result is None:
-                print("Unable to find element defined by", self.site.__name__ + "." + info)
-            else:
-                self.results[info] = result
+            self.results[info] = get_func(element)
         self.results['url'] = url
         self.results['date_aquisition'] = date.today().strftime("%Y-%m-%d")
 
@@ -100,10 +97,12 @@ class MiningEngine:
 
         Simply gets the list of authors and joins them together, using :func:`TagList`
 
-        Attributes:
-            element : :class:`centaurminer.Element`
-                The location of the element to mine data from - in this case, it's several elements located with the same identifier.
+        Arguments
+        ---------
+        element : :class:`centaurminer.Element`
+            The location of the element to mine data from - in this case, it's several elements located with the same identifier.
         '''
+        from utils import TagList
         objs = self.get(element, several=True)
         return TagList(objs)
 
@@ -114,28 +113,29 @@ class MiningEngine:
         Handles errors gracefully and waits for the element to become visible before grabbing it.
         When creating custom :code:`get_*****` functions, use this function to grab the data from the element, before doing additional processing on it.
 
-        Attributes:
-            element: :class:`centaurminer.Element`
-                The location of the element to mine data from.
-            several: Boolean
-                Use to indicate that we should get all elements of this type, instead of the first one on the page.
+        Arguments
+        ---------
+        element : :class:`centaurminer.Element`
+            The location of the element to mine data from.
+        several : Boolean
+            Use to indicate that we should get all elements of this type, instead of the first one on the page.
 
-                .. note::
-                   You should only use :code:`several=True` in a custom ``get_*`` method, so you can do more processing
-                   after getting this list of elements.
+            .. note::
+                You should only use :code:`several=True` in a custom ``get_*`` method, so you can do more processing
+                after getting this list of elements.
 
         '''
-        if element is not None:
-            try:
-                if several:
-                    pageObj = self.wd.find_elements(element.method, element.selector)
-                    return [self._extract(element, obj) for obj in pageObj]
-                else:
-                    pageObj = self.wd.find_element(element.method, element.selector)
-                    return self._extract(element, pageObj)
-            except NoSuchElementException:
-                return None
-        return None
+        if element is None:
+            return None
+        try:
+            if several:
+                pageObj = self.wd.find_elements(element.method, element.selector)
+                return [self._extract(element, obj) for obj in pageObj]
+            else:
+                pageObj = self.wd.find_element(element.method, element.selector)
+                return self._extract(element, pageObj)
+        except NoSuchElementException:
+            return None
 
     def _extract(self, element, obj):
         if element.attribute is None:
@@ -143,7 +143,13 @@ class MiningEngine:
         else:
             return obj.get_attribute(element.attribute)
 
-    def _init_selenium(self, headless=True):
+    def _init_selenium(self, driver_path=None, headless=True):
+        # Install a webdriver/get one from the cache if a path isn't given
+        if driver_path is None:
+            driver_path = ChromeDriverManager().install()
+
+        print("Headless:", headless)
+        print("driver path:", driver_path)
         chrome_options = webdriver.ChromeOptions()
         chrome_options.add_argument('--disable-dev-shm-usage')
         chrome_options.add_argument("--disable-logging")
@@ -168,7 +174,7 @@ class MiningEngine:
                 "plugins.always_open_pdf_externally": True
              }
         )
-        return webdriver.Chrome(ChromeDriverManager().install(),
+        return webdriver.Chrome(driver_path,
                                 options=chrome_options)
 
 

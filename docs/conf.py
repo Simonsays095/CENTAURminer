@@ -12,7 +12,7 @@
 #
 import os
 import sys
-sys.path.insert(0, os.path.abspath('..'))
+sys.path.insert(0, os.path.abspath('../centaurminer'))
 
 
 # -- Project information -----------------------------------------------------
@@ -31,8 +31,12 @@ extensions = [
     "sphinx.ext.autodoc",
     "sphinx_rtd_theme",
     "sphinx.ext.autosectionlabel",
-    "recommonmark"
+    "recommonmark",
+    "sphinx.ext.napoleon"
 ]
+
+# napoleon_google_docstring = True
+napoleon_numpy_docstring = True
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']

@@ -5,13 +5,14 @@ class Element:
     '''
     Simple struct to store instructions to find an element on a page.
 
-    Attributes:
-        attribute : Union[str, NoneType]
-            If None, the text will be extracted - anything else will be interpreted as an attribute name that holds the information you want.
-        method : str
-            The name of the method used to locate the element. Common values include "id", "xpath", and "css_selector" - look at `<https://selenium-python.readthedocs.io/locating-elements.html>`_ for more info. This is passed directly into the selenium.webdriver.common.By constructor.
-        needsInstructions : Boolean
-            If true, this element requires instructions in the :class:`centaurminer.MiningEngine` class to extract - used for the Complex subclass.
+    Attributes
+    ----------
+    method : str
+        The name of the method used to locate the element. Common values include "id", "xpath", and "css_selector" - look at `<https://selenium-python.readthedocs.io/locating-elements.html>`_ for more info. This is passed directly into the ``selenium.webdriver.common.By`` constructor.
+    selector : str
+        Combined with `method`, defines a way to find a specific element on the DOM. This is the actual xpath, css selector, etc., used to find the element.
+    needsInstructions : Boolean
+        If true, this element requires instructions in the :class:`centaurminer.MiningEngine` class to extract - used for the Complex subclass.
     '''
     def __init__(self, method, selector):
         self.needsInstructions = False
@@ -24,7 +25,19 @@ class Element:
         self.selector = selector
 
     def get_attribute(self, attributeName):
-        '''Chainable to tell which attribute to extract'''
+        '''
+        Indicate which attribute of the element should be extracted.
+
+        Arguments
+        ---------
+        attributeName : str
+            Name of the attribute to be extracted.
+
+        Returns
+        -------
+        Element
+            Used for chaining with the contructor.
+        '''
         self.attribute = attributeName
         return self
 
@@ -32,6 +45,11 @@ class Element:
 class MetaData(Element):
     '''
     A special type of Element that's derived from the metadata
+
+    Arguments
+    ---------
+    name : str
+        The 'name' or 'property' value of the Metadata this object points to.
     '''
 
     def __init__(self, name):
@@ -70,20 +88,22 @@ class PageLocations:
     authors = MetaData("citation_author")
     doi = MetaData("citation_doi")
     abstract = MetaData("citation_abstract")
-    full_body: None
-    licensing: None
+    # full_body = None
+    # licensing = None
 
     # Medium priority
     date_publication = MetaData("citation_date")
-    citations: None
-    references: None
-    extra_link: None
+    # citations = None
+    # references = None
+    extra_link = MetaData("citation_pdf_url")
 
     # Low priority
-    organization_affiliated: None
-    category: None
-    keywords: None
-    source_impact_factor: None
+    # organization_affiliated = None
+    # category = None
+    # keywords: None
+    # source_impact_factor = None
+
+    # _defaults = ['title', 'authors', 'doi', 'abstract', 'date_publication', 'extra_link']
 
     @classmethod
     def _elements(cls):

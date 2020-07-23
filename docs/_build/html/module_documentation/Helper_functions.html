@@ -167,18 +167,32 @@
             
   <div class="section" id="helper-functions">
 <h1>Helper Functions<a class="headerlink" href="#helper-functions" title="Permalink to this headline">¶</a></h1>
-<p>There is currently one helper function: <code class="xref py py-func docutils literal notranslate"><span class="pre">TagList()</span></code>, which is used to add <code class="docutils literal notranslate"><span class="pre">&lt;item&gt;...&lt;/item&gt;</span></code> tags to a list.</p>
+<p>There are currently two helper functions, listed below:</p>
 <dl class="py function">
-<dt id="centaurminer.TagList">
-<code class="sig-prename descclassname">centaurminer.</code><code class="sig-name descname">TagList</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">str_list</span></em>, <em class="sig-param"><span class="n">tag</span><span class="o">=</span><span class="default_value">'item'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#centaurminer.TagList" title="Permalink to this definition">¶</a></dt>
+<dt id="utils.TagList">
+<code class="sig-prename descclassname">utils.</code><code class="sig-name descname">TagList</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">str_list</span></em>, <em class="sig-param"><span class="n">tag</span><span class="o">=</span><span class="default_value">'item'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.TagList" title="Permalink to this definition">¶</a></dt>
 <dd><p>Tags a list and converts to a string - avoids data corruption by using a more complex tag.</p>
-<dl class="simple">
-<dt>Attributes:</dt><dd><dl class="simple">
-<dt>str_list<span class="classifier">list</span></dt><dd><p>List of strings to be joined with tags.</p>
-</dd>
-<dt>tag<span class="classifier">str</span></dt><dd><p>Tag to use for the list. This tag will be wrapped in <cite>&lt;…&gt;</cite> and <cite>&lt;/…&gt;</cite> to close.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>str_list</strong> (<em>list</em>) – List of strings to be joined with tags.</p></li>
+<li><p><strong>tag</strong> (<em>str</em><em>, </em><em>optional</em>) – Tag to use for the list. This tag will be wrapped in <cite>&lt;…&gt;</cite> and <cite>&lt;/…&gt;</cite> to close.</p></li>
+</ul>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="utils.CollectURLs">
+<code class="sig-prename descclassname">utils.</code><code class="sig-name descname">CollectURLs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start_url</span></em>, <em class="sig-param"><span class="n">link_elem</span></em>, <em class="sig-param"><span class="n">next_elem</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils.CollectURLs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collects a list of URLs from a search of the site.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start_url</strong> (<em>str</em>) – URL for the first page of a site search.</p></li>
+<li><p><strong>link_elem</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">centaurminer.Element</span></code>) – An Element indicating where individual URL links can be found on the search page.</p></li>
+<li><p><strong>next_elem</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">centaruminer.Element</span></code>, optional) – Indicates where on the page the “next page” button is, to navigate through search pages.</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>

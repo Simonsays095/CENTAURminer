@@ -288,7 +288,7 @@
 </div>
 <div class="section" id="affiliated-organization">
 <h2>Affiliated organization:<a class="headerlink" href="#affiliated-organization" title="Permalink to this headline">¶</a></h2>
-<p>Toward the bottom of the page, you can see the list of author affiliations - it’s a list of authors and organizations, alternating back and forth. Because of this, and because we want to combine both of these types of elements into one result, we need to use a <a class="reference internal" href="../module_documentation/DOM_elements.html#centaurminer.Complex" title="centaurminer.Complex"><code class="xref py py-class docutils literal notranslate"><span class="pre">centaurminer.Complex</span></code></a> class instead of an element. When we combine the authors + orgs, let’s organize it like this: <code class="code docutils literal notranslate"><span class="pre">&lt;item&gt;&lt;author&gt;</span> <span class="pre">...</span> <span class="pre">&lt;/author&gt;&lt;org&gt;</span> <span class="pre">...</span> <span class="pre">&lt;/org&gt;&lt;/item&gt;</span> <span class="pre">...</span></code>. Here’s my solution:</p>
+<p>Toward the bottom of the page, you can see the list of author affiliations - it’s a list of authors and organizations, alternating back and forth. Because of this, and because we want to combine both of these types of elements into one result, we need to use a <code class="xref py py-class docutils literal notranslate"><span class="pre">centaurminer.Complex</span></code> class instead of an element. When we combine the authors + orgs, let’s organize it like this: <code class="code docutils literal notranslate"><span class="pre">&lt;item&gt;&lt;author&gt;</span> <span class="pre">...</span> <span class="pre">&lt;/author&gt;&lt;org&gt;</span> <span class="pre">...</span> <span class="pre">&lt;/org&gt;&lt;/item&gt;</span> <span class="pre">...</span></code>. Here’s my solution:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># In JBSLocations</span>
 <span class="n">organization_affiliated</span> <span class="o">=</span> <span class="n">mining</span><span class="o">.</span><span class="n">Complex</span><span class="p">()</span>
 
@@ -310,7 +310,7 @@
 </div>
 <p>I extract the affiliations and authors separately, zip them together (to get them to alternate), and tag the inner elements manually.</p>
 <p>That’s it for this page! You can extract whatever elements you want, but we’ve already got 238 kb of data, as of writing this example. Now it’s up to your goals and time you can spend, to extract information from whatever site you want!</p>
-<p>Remember, if you’re stuck on some piece of information, you can always manipulate the selenium webdriver itself at <a class="reference internal" href="../module_documentation/MiningEngine.html#centaurminer.MiningEngine" title="centaurminer.MiningEngine"><code class="xref py py-class docutils literal notranslate"><span class="pre">MiningEngine.wd</span></code></a>.</p>
+<p>Remember, if you’re stuck on some piece of information, you can always manipulate the selenium webdriver itself at <code class="xref py py-class docutils literal notranslate"><span class="pre">MiningEngine.wd</span></code>.</p>
 <p>Happy mining!</p>
 </div>
 </div>

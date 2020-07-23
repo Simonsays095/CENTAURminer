@@ -1,7 +1,0 @@
-Mining Engine
-=============
-
-This is the main driver for connecting a site and gathering information in a :class:`pieminer.PageLocations` object.
-
-.. autoclass:: pieminer.MiningEngine
-   :members:

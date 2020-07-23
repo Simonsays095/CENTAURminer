@@ -8,11 +8,25 @@
 Installation
 ------------
 
-You need python >3.4 as a pre-requisite, and then simply install via pip:
+Pre-requisites
+~~~~~~~~~~~~~~
+   - Python version >= 3.4
+   - Google chrome
+
+Install
+~~~~~~~
+
+Install directly via pip:
 
 .. code-block:: console
 
    pip install centaurminer
+
+Dependencies
+~~~~~~~~~~~~
+
+- Selenium >= 3.141.0
+- webdriver-manager >= 3.2.1
 
 .. toctree::
    :maxdepth: 1
@@ -36,3 +50,12 @@ You need python >3.4 as a pre-requisite, and then simply install via pip:
    examples/Minimal
    examples/Fully_worked
 
+More Information
+----------------
+
+You can get more information from the source code and the PyPi page:
+   - `Source code`_
+   - `PyPi page`_
+
+.. _Source code: https://github.com/Simonsays095/CENTAURminer
+.. _PyPi page: https://pypi.org/project/centaurminer/

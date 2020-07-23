@@ -1,6 +1,8 @@
 Helper Functions
 ================
 
-There is currently one helper function: :func:`TagList`, which is used to add ``<item>...</item>`` tags to a list.
+There are currently two helper functions, listed below:
 
-.. autofunction:: centaurminer.TagList
+.. autofunction:: utils.TagList
+
+.. autofunction:: utils.CollectURLs
