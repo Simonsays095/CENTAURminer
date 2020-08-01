@@ -169,8 +169,8 @@
 <h1>Mining Engine<a class="headerlink" href="#mining-engine" title="Permalink to this headline">¶</a></h1>
 <p>This is the main driver for connecting a site and gathering information in a <code class="xref py py-class docutils literal notranslate"><span class="pre">centaurminer.PageLocations</span></code> object.</p>
 <dl class="py class">
-<dt id="Engine.MiningEngine">
-<em class="property">class </em><code class="sig-prename descclassname">Engine.</code><code class="sig-name descname">MiningEngine</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">site_locations</span><span class="p">:</span> <span class="n"><a class="reference internal" href="PageLocations.html#DOM_elements.PageLocations" title="DOM_elements.PageLocations">DOM_elements.PageLocations</a></span></em>, <em class="sig-param"><span class="n">driver_path</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">headless</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Engine.MiningEngine" title="Permalink to this definition">¶</a></dt>
+<dt id="centaurminer.MiningEngine">
+<em class="property">class </em><code class="sig-prename descclassname">centaurminer.</code><code class="sig-name descname">MiningEngine</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">site_locations</span><span class="p">:</span> <span class="n">centaurminer.DOM_elements.PageLocations</span></em>, <em class="sig-param"><span class="n">driver_path</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">headless</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#centaurminer.MiningEngine" title="Permalink to this definition">¶</a></dt>
 <dd><p>A simple mining engine to gather information from article-hosting websites.</p>
 <p>The locations in the DOM for each element are given by a PageLocations object
 in the constructor. This class then uses those instructions to gather the info.</p>
@@ -200,8 +200,8 @@ you should create/override the <code class="code docutils literal notranslate"><
 </dd>
 </dl>
 <dl class="py attribute">
-<dt id="Engine.MiningEngine.site">
-<code class="sig-name descname">site</code><a class="headerlink" href="#Engine.MiningEngine.site" title="Permalink to this definition">¶</a></dt>
+<dt id="centaurminer.MiningEngine.site">
+<code class="sig-name descname">site</code><a class="headerlink" href="#centaurminer.MiningEngine.site" title="Permalink to this definition">¶</a></dt>
 <dd><p>Stores the location of the elements you want to extract information from.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -211,8 +211,8 @@ you should create/override the <code class="code docutils literal notranslate"><
 </dd></dl>
 
 <dl class="py attribute">
-<dt id="Engine.MiningEngine.wd">
-<code class="sig-name descname">wd</code><a class="headerlink" href="#Engine.MiningEngine.wd" title="Permalink to this definition">¶</a></dt>
+<dt id="centaurminer.MiningEngine.wd">
+<code class="sig-name descname">wd</code><a class="headerlink" href="#centaurminer.MiningEngine.wd" title="Permalink to this definition">¶</a></dt>
 <dd><p>The webdriver used to connect to and collect DOM elements from the URL you specify.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -222,8 +222,8 @@ you should create/override the <code class="code docutils literal notranslate"><
 </dd></dl>
 
 <dl class="py attribute">
-<dt id="Engine.MiningEngine.results">
-<code class="sig-name descname">results</code><a class="headerlink" href="#Engine.MiningEngine.results" title="Permalink to this definition">¶</a></dt>
+<dt id="centaurminer.MiningEngine.results">
+<code class="sig-name descname">results</code><a class="headerlink" href="#centaurminer.MiningEngine.results" title="Permalink to this definition">¶</a></dt>
 <dd><p>Storage dictionary for the results from data gathering.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -233,8 +233,8 @@ you should create/override the <code class="code docutils literal notranslate"><
 </dd></dl>
 
 <dl class="py method">
-<dt id="Engine.MiningEngine.gather">
-<code class="sig-name descname">gather</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Engine.MiningEngine.gather" title="Permalink to this definition">¶</a></dt>
+<dt id="centaurminer.MiningEngine.gather">
+<code class="sig-name descname">gather</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em><span class="sig-paren">)</span><a class="headerlink" href="#centaurminer.MiningEngine.gather" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gather the information denoted in self.site from a single page.</p>
 <p>Arguments:</p>
 <ul class="simple">
@@ -243,8 +243,8 @@ you should create/override the <code class="code docutils literal notranslate"><
 </dd></dl>
 
 <dl class="py method">
-<dt id="Engine.MiningEngine.get">
-<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">element</span></em>, <em class="sig-param"><span class="n">several</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Engine.MiningEngine.get" title="Permalink to this definition">¶</a></dt>
+<dt id="centaurminer.MiningEngine.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">element</span></em>, <em class="sig-param"><span class="n">several</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#centaurminer.MiningEngine.get" title="Permalink to this definition">¶</a></dt>
 <dd><p>Default method for extracting an element from the page.</p>
 <p>Handles errors gracefully and waits for the element to become visible before grabbing it.
 When creating custom <code class="code docutils literal notranslate"><span class="pre">get_*****</span></code> functions, use this function to grab the data from the element, before doing additional processing on it.</p>
@@ -265,8 +265,8 @@ after getting this list of elements.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="Engine.MiningEngine.get_authors">
-<code class="sig-name descname">get_authors</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">element</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Engine.MiningEngine.get_authors" title="Permalink to this definition">¶</a></dt>
+<dt id="centaurminer.MiningEngine.get_authors">
+<code class="sig-name descname">get_authors</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">element</span></em><span class="sig-paren">)</span><a class="headerlink" href="#centaurminer.MiningEngine.get_authors" title="Permalink to this definition">¶</a></dt>
 <dd><p>Override for author collection instructions.</p>
 <p>Simply gets the list of authors and joins them together, using <code class="xref py py-func docutils literal notranslate"><span class="pre">TagList()</span></code></p>
 <dl class="field-list simple">

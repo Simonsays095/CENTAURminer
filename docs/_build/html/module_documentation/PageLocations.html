@@ -167,8 +167,8 @@
             
   <div class="section" id="page-locations">
 <h1>Page Locations<a class="headerlink" href="#page-locations" title="Permalink to this headline">¶</a></h1>
-<p>This class is an intermediate between the <code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code> class and the <code class="xref py py-class docutils literal notranslate"><span class="pre">MiningEngine</span></code> class. It holds all of the <code class="xref py py-class docutils literal notranslate"><span class="pre">Elements</span></code> you want to mine data from, so that the <code class="xref py py-class docutils literal notranslate"><span class="pre">MiningEngine</span></code> knows where to locate everything.</p>
-<p>It does not contain any functions, just static variables (defined outside of an <code class="code docutils literal notranslate"><span class="pre">__init__</span></code> function) containing</p>
+<p>This class is an intermediate between the <code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code> class and the <a class="reference internal" href="MiningEngine.html#centaurminer.MiningEngine" title="centaurminer.MiningEngine"><code class="xref py py-class docutils literal notranslate"><span class="pre">MiningEngine</span></code></a> class. It holds all of the <code class="xref py py-class docutils literal notranslate"><span class="pre">Elements</span></code> you want to mine data from, so that the <a class="reference internal" href="MiningEngine.html#centaurminer.MiningEngine" title="centaurminer.MiningEngine"><code class="xref py py-class docutils literal notranslate"><span class="pre">MiningEngine</span></code></a> knows where to locate everything.</p>
+<p>It does not contain any functions, just static variables (defined outside of an <code class="code docutils literal notranslate"><span class="pre">__init__</span></code> function) containing <cite>Elements &lt;centaurminer.Element&gt;</cite>.</p>
 <dl class="py class">
 <dt id="DOM_elements.PageLocations">
 <em class="property">class </em><code class="sig-prename descclassname">DOM_elements.</code><code class="sig-name descname">PageLocations</code><a class="headerlink" href="#DOM_elements.PageLocations" title="Permalink to this definition">¶</a></dt>
@@ -183,7 +183,7 @@
 <li><p>date_publication : MetaData(“citation_date”)</p></li>
 </ul>
 </div></blockquote>
-<p>These <em>can</em> be overwritten if required. Also, see <code class="xref py py-class docutils literal notranslate"><span class="pre">centaurminer.MiningEngine</span></code> to see how authors specifically are handled.</p>
+<p>These <em>can</em> be overwritten if required. Also, see <a class="reference internal" href="MiningEngine.html#centaurminer.MiningEngine" title="centaurminer.MiningEngine"><code class="xref py py-class docutils literal notranslate"><span class="pre">centaurminer.MiningEngine</span></code></a> to see how authors specifically are handled.</p>
 <p>To include an <code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code> for another piece of information, just subclass this class and add a static variable that stores an <code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code>.</p>
 </dd></dl>
 
