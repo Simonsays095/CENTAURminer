@@ -167,7 +167,7 @@
             
   <div class="section" id="mining-engine">
 <h1>Mining Engine<a class="headerlink" href="#mining-engine" title="Permalink to this headline">¶</a></h1>
-<p>This is the main driver for connecting a site and gathering information in a <code class="xref py py-class docutils literal notranslate"><span class="pre">centaurminer.PageLocations</span></code> object.</p>
+<p>This is the main driver for connecting a site and gathering information in a <a class="reference internal" href="PageLocations.html#centaurminer.PageLocations" title="centaurminer.PageLocations"><code class="xref py py-class docutils literal notranslate"><span class="pre">centaurminer.PageLocations</span></code></a> object.</p>
 <dl class="py class">
 <dt id="centaurminer.MiningEngine">
 <em class="property">class </em><code class="sig-prename descclassname">centaurminer.</code><code class="sig-name descname">MiningEngine</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">site_locations</span><span class="p">:</span> <span class="n">centaurminer.DOM_elements.PageLocations</span></em>, <em class="sig-param"><span class="n">driver_path</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">headless</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#centaurminer.MiningEngine" title="Permalink to this definition">¶</a></dt>
@@ -205,7 +205,7 @@ you should create/override the <code class="code docutils literal notranslate"><
 <dd><p>Stores the location of the elements you want to extract information from.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">PageLocations</span></code></p>
+<dd class="field-odd"><p><a class="reference internal" href="PageLocations.html#centaurminer.PageLocations" title="centaurminer.PageLocations"><code class="xref py py-class docutils literal notranslate"><span class="pre">PageLocations</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -251,7 +251,7 @@ When creating custom <code class="code docutils literal notranslate"><span class
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>element</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">centaurminer.Element</span></code>) – The location of the element to mine data from.</p></li>
+<li><p><strong>element</strong> (<a class="reference internal" href="DOM_elements.html#centaurminer.Element" title="centaurminer.Element"><code class="xref py py-class docutils literal notranslate"><span class="pre">centaurminer.Element</span></code></a>) – The location of the element to mine data from.</p></li>
 <li><p><strong>several</strong> (<em>Boolean</em>) – <p>Use to indicate that we should get all elements of this type, instead of the first one on the page.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -268,10 +268,10 @@ after getting this list of elements.</p>
 <dt id="centaurminer.MiningEngine.get_authors">
 <code class="sig-name descname">get_authors</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">element</span></em><span class="sig-paren">)</span><a class="headerlink" href="#centaurminer.MiningEngine.get_authors" title="Permalink to this definition">¶</a></dt>
 <dd><p>Override for author collection instructions.</p>
-<p>Simply gets the list of authors and joins them together, using <code class="xref py py-func docutils literal notranslate"><span class="pre">TagList()</span></code></p>
+<p>Simply gets the list of authors and joins them together, using <a class="reference internal" href="Helper_functions.html#centaurminer.TagList" title="centaurminer.TagList"><code class="xref py py-func docutils literal notranslate"><span class="pre">TagList()</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>element</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">centaurminer.Element</span></code>) – The location of the element to mine data from - in this case, it’s several elements located with the same identifier.</p>
+<dd class="field-odd"><p><strong>element</strong> (<a class="reference internal" href="DOM_elements.html#centaurminer.Element" title="centaurminer.Element"><code class="xref py py-class docutils literal notranslate"><span class="pre">centaurminer.Element</span></code></a>) – The location of the element to mine data from - in this case, it’s several elements located with the same identifier.</p>
 </dd>
 </dl>
 </dd></dl>

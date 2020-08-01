@@ -3,6 +3,6 @@ Helper Functions
 
 There are currently two helper functions, listed below:
 
-.. autofunction:: utils.TagList
+.. autofunction:: centaurminer.TagList
 
-.. autofunction:: utils.CollectURLs
+.. autofunction:: centaurminer.CollectURLs

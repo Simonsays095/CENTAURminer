@@ -5,5 +5,5 @@ This class is an intermediate between the :class:`Element <centaurminer.Element>
 
 It does not contain any functions, just static variables (defined outside of an :code:`__init__` function) containing :class:`Elements <centaurminer.Element>`.
 
-.. autoclass:: DOM_elements.PageLocations
+.. autoclass:: centaurminer.PageLocations
    :members:
