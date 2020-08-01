@@ -3,7 +3,7 @@ import sys
 from datetime import date
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
-from .selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import NoSuchElementException
 from .DOM_elements import PageLocations
 
 
