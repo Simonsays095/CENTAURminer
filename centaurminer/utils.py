@@ -15,7 +15,7 @@ def TagList(str_list, tag="item"):
     return result
 
 
-def CollectURLs(start_url, link_elem, next_elem=None):
+def CollectURLs(start_url, link_elem, next_elem=None, **kwargs):
     '''
     Collects a list of URLs from a search of the site.
 
@@ -34,7 +34,7 @@ def CollectURLs(start_url, link_elem, next_elem=None):
     urls = []
     pageNum = 1
     # Get access to a webdriver and load the page
-    miner = MiningEngine(PageLocations)
+    miner = MiningEngine(PageLocations, **kwargs)
     miner.wd.get(start_url)
 
     # Load all the links on this page
