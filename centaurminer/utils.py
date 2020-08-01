@@ -11,7 +11,7 @@ def TagList(str_list, tag="item"):
     '''
     result = ""
     for string in str_list:
-        result += "<item>" + string + "</item>"
+        result += f"<{tag}>string</{tag}>"
     return result
 
 
