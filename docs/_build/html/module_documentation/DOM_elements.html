@@ -1,0 +1,304 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>DOM Elements &mdash; CENTAUR miner  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Page Locations" href="PageLocations.html" />
+    <link rel="prev" title="Intro to Data Mining" href="../intro_to_data_mining.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> CENTAUR miner
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro_to_data_mining.html">Intro to Data Mining</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro_to_data_mining.html#ethical-data-mining">Ethical Data Mining</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro_to_data_mining.html#document-object-models">Document Object Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro_to_data_mining.html#web-elements">Web Elements</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">DOM Elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PageLocations.html">Page Locations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MiningEngine.html">Mining Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Helper_functions.html">Helper Functions</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/Minimal.html">Minimal Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/Fully_worked.html">Fully Worked Example</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CENTAUR miner</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>DOM Elements</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/module_documentation/DOM_elements.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dom-elements">
+<h1>DOM Elements<a class="headerlink" href="#dom-elements" title="Permalink to this headline">¶</a></h1>
+<p>There are two main classes for locating an element on the DOM of your site, described below.</p>
+<dl class="py class">
+<dt id="DOM_elements.Element">
+<em class="property">class </em><code class="sig-prename descclassname">DOM_elements.</code><code class="sig-name descname">Element</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">method</span></em>, <em class="sig-param"><span class="n">selector</span></em><span class="sig-paren">)</span><a class="headerlink" href="#DOM_elements.Element" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simple struct to store instructions to find an element on a page.</p>
+<dl class="py attribute">
+<dt id="DOM_elements.Element.method">
+<code class="sig-name descname">method</code><a class="headerlink" href="#DOM_elements.Element.method" title="Permalink to this definition">¶</a></dt>
+<dd><p>The name of the method used to locate the element. Common values include “id”, “xpath”, and “css_selector” - look at <a class="reference external" href="https://selenium-python.readthedocs.io/locating-elements.html">https://selenium-python.readthedocs.io/locating-elements.html</a> for more info. This is passed directly into the <code class="docutils literal notranslate"><span class="pre">selenium.webdriver.common.By</span></code> constructor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="DOM_elements.Element.selector">
+<code class="sig-name descname">selector</code><a class="headerlink" href="#DOM_elements.Element.selector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Combined with <cite>method</cite>, defines a way to find a specific element on the DOM. This is the actual xpath, css selector, etc., used to find the element.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="DOM_elements.Element.needsInstructions">
+<code class="sig-name descname">needsInstructions</code><a class="headerlink" href="#DOM_elements.Element.needsInstructions" title="Permalink to this definition">¶</a></dt>
+<dd><p>If true, this element requires instructions in the <a class="reference internal" href="MiningEngine.html#centaurminer.MiningEngine" title="centaurminer.MiningEngine"><code class="xref py py-class docutils literal notranslate"><span class="pre">centaurminer.MiningEngine</span></code></a> class to extract - used for the Complex subclass.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="DOM_elements.Element.get_attribute">
+<code class="sig-name descname">get_attribute</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">attributeName</span></em><span class="sig-paren">)</span><a class="headerlink" href="#DOM_elements.Element.get_attribute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Indicate which attribute of the element should be extracted.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>attributeName</strong> (<em>str</em>) – Name of the attribute to be extracted.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Used for chaining with the contructor.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#DOM_elements.Element" title="DOM_elements.Element">Element</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="DOM_elements.MetaData">
+<em class="property">class </em><code class="sig-prename descclassname">DOM_elements.</code><code class="sig-name descname">MetaData</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#DOM_elements.MetaData" title="Permalink to this definition">¶</a></dt>
+<dd><p>A special type of Element that’s derived from the metadata</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The ‘name’ or ‘property’ value of the Metadata this object points to.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>There is an additional class, used when you want to indicate that there’s heavy post-processing required in the <a class="reference internal" href="MiningEngine.html#centaurminer.MiningEngine" title="centaurminer.MiningEngine"><code class="xref py py-class docutils literal notranslate"><span class="pre">centaurminer.MiningEngine</span></code></a> subclass.</p>
+<dl class="py class">
+<dt id="DOM_elements.Complex">
+<em class="property">class </em><code class="sig-prename descclassname">DOM_elements.</code><code class="sig-name descname">Complex</code><a class="headerlink" href="#DOM_elements.Complex" title="Permalink to this definition">¶</a></dt>
+<dd><p>This represents an element that needs further directions to extract.</p>
+<p>An error will be thrown when trying to gather data, if the <a class="reference internal" href="MiningEngine.html#centaurminer.MiningEngine" title="centaurminer.MiningEngine"><code class="xref py py-class docutils literal notranslate"><span class="pre">centaurminer.MiningEngine</span></code></a> doing the mining does not have an instruction for a Complex element.</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="PageLocations.html" class="btn btn-neutral float-right" title="Page Locations" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../intro_to_data_mining.html" class="btn btn-neutral float-left" title="Intro to Data Mining" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Simon Ewing
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

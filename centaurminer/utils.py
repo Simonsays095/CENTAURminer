@@ -30,7 +30,8 @@ def CollectURLs(start_url, link_elem, next_elem=None, max_elems=10000, **kwargs)
     max_elems : int
         If the number of URLs collected exceeds this number, it will stop searching through pages and return the list.
     
-    kwargs: Additional arguments are passed directly into the :class:`centaurminer.Engine` constructor.
+    kwargs
+        Additional arguments are passed directly into the :class:`centaurminer.Engine` constructor.
     '''
     from .DOM_elements import PageLocations
     from .Engine import MiningEngine
