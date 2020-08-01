@@ -15,7 +15,7 @@ def TagList(str_list, tag="item"):
     return result
 
 
-def CollectURLs(start_url, link_elem, next_elem=None, **kwargs):
+def CollectURLs(start_url, link_elem, next_elem=None, max_elems=10000, **kwargs):
     '''
     Collects a list of URLs from a search of the site.
 
@@ -27,6 +27,10 @@ def CollectURLs(start_url, link_elem, next_elem=None, **kwargs):
         An Element indicating where individual URL links can be found on the search page.
     next_elem : :class:`centaruminer.Element`, optional
         Indicates where on the page the "next page" button is, to navigate through search pages.
+    max_elems : int
+        If the number of URLs collected exceeds this number, it will stop searching through pages and return the list.
+    
+    kwargs: Additional arguments are passed directly into the :class:`centaurminer.Engine` constructor.
     '''
     from .DOM_elements import PageLocations
     from .Engine import MiningEngine
@@ -46,7 +50,7 @@ def CollectURLs(start_url, link_elem, next_elem=None, **kwargs):
     while len(elems) > 0:
         print("Appending URLs from page", pageNum)
         urls.extend(elems)
-        if len(urls) > 50:
+        if len(urls) > maxElems:
             break
 
         # Go to next page
