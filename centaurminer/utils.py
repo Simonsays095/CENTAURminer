@@ -11,7 +11,7 @@ def TagList(str_list, tag="item"):
     '''
     result = ""
     for string in str_list:
-        result += f"<{tag}>string</{tag}>"
+        result += f"<{tag}>{string}</{tag}>"
     return result
 
 
@@ -27,7 +27,7 @@ def CollectURLs(start_url, link_elem, next_elem=None, maxElems=10000, **kwargs):
         An Element indicating where individual URL links can be found on the search page.
     next_elem : :class:`centaruminer.Element`, optional
         Indicates where on the page the "next page" button is, to navigate through search pages.
-    max_elems : int
+    maxElems : int
         If the number of URLs collected exceeds this number, it will stop searching through pages and return the list.
     
     kwargs
