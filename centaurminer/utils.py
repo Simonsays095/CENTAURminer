@@ -15,7 +15,7 @@ def TagList(str_list, tag="item"):
     return result
 
 
-def CollectURLs(start_url, link_elem, next_elem=None, max_elems=10000, **kwargs):
+def CollectURLs(start_url, link_elem, next_elem=None, maxElems=10000, **kwargs):
     '''
     Collects a list of URLs from a search of the site.
 
