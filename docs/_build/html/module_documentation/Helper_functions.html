@@ -184,7 +184,7 @@
 
 <dl class="py function">
 <dt id="centaurminer.CollectURLs">
-<code class="sig-prename descclassname">centaurminer.</code><code class="sig-name descname">CollectURLs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start_url</span></em>, <em class="sig-param"><span class="n">link_elem</span></em>, <em class="sig-param"><span class="n">next_elem</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_elems</span><span class="o">=</span><span class="default_value">10000</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#centaurminer.CollectURLs" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">centaurminer.</code><code class="sig-name descname">CollectURLs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start_url</span></em>, <em class="sig-param"><span class="n">link_elem</span></em>, <em class="sig-param"><span class="n">next_elem</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">limit</span><span class="o">=</span><span class="default_value">10000</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#centaurminer.CollectURLs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Collects a list of URLs from a search of the site.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -192,7 +192,7 @@
 <li><p><strong>start_url</strong> (<em>str</em>) – URL for the first page of a site search.</p></li>
 <li><p><strong>link_elem</strong> (<a class="reference internal" href="DOM_elements.html#centaurminer.Element" title="centaurminer.Element"><code class="xref py py-class docutils literal notranslate"><span class="pre">centaurminer.Element</span></code></a>) – An Element indicating where individual URL links can be found on the search page.</p></li>
 <li><p><strong>next_elem</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">centaruminer.Element</span></code>, optional) – Indicates where on the page the “next page” button is, to navigate through search pages.</p></li>
-<li><p><strong>max_elems</strong> (<em>int</em>) – If the number of URLs collected exceeds this number, it will stop searching through pages and return the list.</p></li>
+<li><p><strong>limit</strong> (<em>int</em>) – If the number of URLs collected exceeds this number, it will stop searching and return the list or URLs.</p></li>
 <li><p><strong>kwargs</strong> – Additional arguments are passed directly into the <code class="xref py py-class docutils literal notranslate"><span class="pre">centaurminer.Engine</span></code> constructor.</p></li>
 </ul>
 </dd>
