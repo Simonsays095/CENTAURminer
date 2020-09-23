@@ -15,7 +15,7 @@ def TagList(str_list, tag="item"):
     return result
 
 
-def CollectURLs(start_url, link_elem, next_elem=None, maxElems=10000, **kwargs):
+def CollectURLs(start_url, link_elem, next_elem=None, limit=10000, **kwargs):
     '''
     Collects a list of URLs from a search of the site.
 
@@ -27,8 +27,8 @@ def CollectURLs(start_url, link_elem, next_elem=None, maxElems=10000, **kwargs):
         An Element indicating where individual URL links can be found on the search page.
     next_elem : :class:`centaruminer.Element`, optional
         Indicates where on the page the "next page" button is, to navigate through search pages.
-    maxElems : int
-        If the number of URLs collected exceeds this number, it will stop searching through pages and return the list.
+    limit : int
+        If the number of URLs collected exceeds this number, it will stop searching and return the list or URLs.
     
     kwargs
         Additional arguments are passed directly into the :class:`centaurminer.Engine` constructor.
@@ -45,13 +45,15 @@ def CollectURLs(start_url, link_elem, next_elem=None, maxElems=10000, **kwargs):
     # Load all the links on this page
     elems = miner.get(link_elem, several=True)
     if next_elem is None:
-        return elems
+        numToAdd = min(limit, len(elems))  # If this page has more than allowed by limit, just extend with some of the elements
+        return elems[:numToAdd]
 
     # Repeatedly gather links from several pages
     while len(elems) > 0:
         print("Appending URLs from page", pageNum)
-        urls.extend(elems)
-        if len(urls) > maxElems:
+        numToAdd = min(limit - len(urls), len(elems))  # If this page has more than allowed by limit, just extend with some of the elements
+        urls.extend(elems[:numToAdd])
+        if len(urls) == limit:
             break
 
         # Go to next page
