@@ -89,7 +89,7 @@ class MiningEngine:
                 get_func = self.get
             self.results[info] = get_func(element)
         self.results['url'] = url
-        self.results['date_aquisition'] = date.today().strftime("%Y-%m-%d")
+        self.results['date_acquisition'] = date.today().strftime("%Y-%m-%d")
 
     def get_authors(self, element):
         '''
